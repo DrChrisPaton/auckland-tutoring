@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auckland Tutoring · Dr Meriel Bladon | IGCSE & A-level | North Shore & Whangaparāoa</title>
+<meta name="description" content="Auckland Tutoring — private one-to-one IGCSE and A-level tuition by Dr Meriel Bladon, a UK-trained medical doctor. Biology, Chemistry, Maths, Physics, plus UCAT and medical-school admissions support. North Shore Auckland and Whangaparāoa Peninsula.">
+<meta property="og:title" content="Auckland Tutoring · Dr Meriel Bladon">
+<meta property="og:description" content="Calm, structured IGCSE and A-level tutoring on Auckland's North Shore and Whangaparāoa Peninsula, by a UK-trained medical doctor.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f1d2e;
+    --ink-muted: #4a5a6e;
+    --paper: #fbfaf6;
+    --paper-2: #f3efe6;
+    --accent: #1f4e79;
+    --accent-2: #2d6aa0;
+    --gold: #b8893a;
+    --line: #d8d3c4;
+    --max: 1120px;
+    --radius: 14px;
+    --shadow: 0 1px 2px rgba(15,29,46,.04), 0 8px 28px rgba(15,29,46,.07);
+  }
+  *,*::before,*::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: "Fraunces", "Iowan Old Style", "Palatino", Georgia, serif;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 .4em;
+  }
+  p { margin: 0 0 1em; color: var(--ink); }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--accent-2); }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* Navigation */
+  .nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(251,250,246,.86);
+    backdrop-filter: saturate(160%) blur(12px);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 24px; max-width: var(--max); margin: 0 auto;
+  }
+  .brand {
+    display: inline-flex; align-items: baseline; gap: 10px;
+    text-decoration: none; color: var(--ink);
+  }
+  .brand-mark {
+    font-family: "Fraunces", serif; font-weight: 600; font-size: 1.08rem;
+    letter-spacing: -.01em;
+  }
+  .brand-by {
+    color: var(--ink-muted); font-weight: 400; font-style: italic; font-size: .82rem;
+    border-left: 1px solid var(--line); padding-left: 10px;
+  }
+  @media (max-width: 480px) {
+    .brand-by { display: none; }
+  }
+  .nav-links { display: flex; gap: 22px; }
+  .nav-links a { color: var(--ink-muted); text-decoration: none; font-size: .92rem; font-weight: 500; }
+  .nav-links a:hover { color: var(--accent); }
+  @media (max-width: 640px) { .nav-links { display: none; } }
+
+  /* Hero */
+  .hero {
+    padding: 72px 0 56px;
+    background:
+      radial-gradient(1200px 400px at 80% -10%, rgba(31,78,121,.10), transparent 60%),
+      radial-gradient(800px 300px at -10% 30%, rgba(184,137,58,.08), transparent 60%),
+      var(--paper);
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: center;
+  }
+  .eyebrow {
+    display: inline-block; font-size: .78rem; font-weight: 600; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+  }
+  .hero h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); margin-bottom: 18px; }
+  .hero h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .lede { font-size: 1.12rem; color: var(--ink-muted); max-width: 56ch; }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: .96rem;
+    text-decoration: none; transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: var(--shadow); }
+  .btn-primary:hover { background: #173d61; color: #fff; transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+  .btn-ghost:hover { background: var(--accent); color: #fff; }
+  .btn svg { width: 18px; height: 18px; }
+
+  .portrait-wrap {
+    justify-self: end; display: flex; flex-direction: column; align-items: center; gap: 14px;
+  }
+  .portrait {
+    width: 300px; height: 360px; object-fit: cover; object-position: center 22%;
+    border-radius: 20px; box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+    background: var(--paper-2);
+  }
+  .credit-caption {
+    text-align: center; font-size: .88rem; color: var(--ink-muted); line-height: 1.45;
+  }
+  .credit-caption strong { color: var(--ink); font-weight: 600; }
+  @media (max-width: 880px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    .portrait-wrap { justify-self: start; align-items: flex-start; }
+    .credit-caption { text-align: left; }
+    .portrait { width: 220px; height: 260px; }
+  }
+
+  /* Sections */
+  section { padding: 80px 0; }
+  section:nth-of-type(even) { background: var(--paper-2); }
+  .eyebrow-sm {
+    display: block; font-size: .76rem; font-weight: 600; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+  }
+  .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); max-width: 22ch; margin-bottom: 14px; }
+  .section-lede { color: var(--ink-muted); max-width: 64ch; font-size: 1.05rem; margin-bottom: 36px; }
+
+  /* Subjects grid */
+  .subjects {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;
+  }
+  @media (max-width: 720px) { .subjects { grid-template-columns: 1fr; } }
+  .card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 26px 26px 24px; transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: #c9c0a6; }
+  .card .icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: rgba(31,78,121,.08); color: var(--accent);
+    display: grid; place-items: center; margin-bottom: 14px;
+  }
+  .card .icon svg { width: 20px; height: 20px; }
+  .card h3 { font-size: 1.18rem; font-family: "Fraunces", serif; margin-bottom: 6px; }
+  .card .levels { color: var(--gold); font-weight: 600; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+  .card p { color: var(--ink-muted); font-size: .96rem; margin: 0; }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
+  .about-grid p { font-size: 1.04rem; color: var(--ink); }
+  .credentials {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px; box-shadow: var(--shadow);
+  }
+  .credentials h3 { font-size: 1.1rem; margin-bottom: 18px; }
+  .credentials ul { list-style: none; padding: 0; margin: 0; }
+  .credentials li { padding: 12px 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+  .credentials li:first-child { border-top: 0; padding-top: 0; }
+  .credentials .label { font-weight: 600; color: var(--ink); }
+  .credentials .value { color: var(--ink-muted); font-size: .92rem; text-align: right; }
+  @media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+  /* Approach */
+  .approach { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 880px) { .approach { grid-template-columns: 1fr; } }
+  .step { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+  .step-num {
+    font-family: "Fraunces", serif; font-size: 1.6rem; color: var(--accent); font-weight: 600;
+    display: block; margin-bottom: 6px;
+  }
+
+  /* Areas */
+  .areas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
+  @media (max-width: 720px) { .areas-grid { grid-template-columns: 1fr; } }
+  .areas-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .pill {
+    background: #fff; border: 1px solid var(--line); border-radius: 999px;
+    padding: 7px 14px; font-size: .9rem; color: var(--ink); font-weight: 500;
+  }
+  .map-card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 12px;
+    box-shadow: var(--shadow);
+  }
+  .map-frame {
+    position: relative; width: 100%; aspect-ratio: 4 / 3;
+    border-radius: 10px; overflow: hidden; background: var(--paper-2);
+  }
+  .map-frame iframe {
+    position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+  }
+  .map-caption {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 6px 4px; font-size: .82rem; color: var(--ink-muted);
+  }
+  .map-caption a { color: var(--accent); text-decoration: none; font-weight: 500; }
+  .map-caption a:hover { text-decoration: underline; }
+
+  /* Contact */
+  .contact { background: var(--accent); color: #fff; }
+  .contact h2, .contact p, .contact span { color: #fff; }
+  .contact .eyebrow-sm { color: rgba(255,255,255,.75); }
+  .contact .section-lede { color: rgba(255,255,255,.85); }
+  .contact-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; }
+  .btn-light { background: #fff; color: var(--accent); }
+  .btn-light, .btn-light svg { color: var(--accent); }
+  .btn-light:hover { background: var(--paper-2); color: var(--accent); }
+  .btn-outline-light { border: 1px solid rgba(255,255,255,.6); color: #fff; }
+  .btn-outline-light, .btn-outline-light svg { color: #fff; }
+  .btn-outline-light:hover { background: rgba(255,255,255,.1); }
+
+  footer {
+    padding: 28px 0; text-align: center; font-size: .85rem; color: var(--ink-muted);
+    border-top: 1px solid var(--line); background: var(--paper);
+  }
+  footer p { margin: 0; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">Auckland Tutoring</span>
+      <span class="brand-by">by Dr Meriel Bladon</span>
+    </a>
+    <div class="nav-links">
+      <a href="#subjects">Subjects</a>
+      <a href="#about">About</a>
+      <a href="#approach">Approach</a>
+      <a href="#areas">Areas</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Auckland Tutoring · IGCSE & A-level · North Shore</span>
+      <h1>Calm, structured tutoring from a <em>UK-trained doctor</em>.</h1>
+      <p class="lede">
+        Private one-to-one tuition in Biology, Chemistry, Maths and Physics for IGCSE and A-level students,
+        plus UCAT and medical-school admissions support. Based in Gulf Harbour and serving the
+        Whangaparāoa Peninsula and Auckland's North Shore.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Book a free intro call
+        </a>
+        <a class="btn btn-ghost" href="#subjects">See subjects</a>
+      </div>
+    </div>
+    <div class="portrait-wrap">
+      <img class="portrait" src="meriel.png" alt="Dr Meriel Bladon" />
+      <div class="credit-caption">
+        <strong>Dr Meriel Bladon</strong><br>
+        BMBS, BMedSci · University of Nottingham
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="subjects">
+  <div class="wrap">
+    <span class="eyebrow-sm">What I tutor</span>
+    <h2 class="section-title">IGCSE and A-level subjects, with optional admissions support.</h2>
+    <p class="section-lede">
+      Every student is different. Lessons are tailored to your specific exam board (Cambridge,
+      Edexcel, OCR, AQA) and pace, with a focus on building genuine understanding rather than
+      rote memorisation.
+    </p>
+    <div class="subjects">
+
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <div class="levels">IGCSE · AS · A-level</div>
+        <h3>Biology</h3>
+        <p>From cells, genetics and physiology through to ecology and biochemistry, taught by a doctor with years of clinical practice and biomedical teaching.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6l-5 9a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 18l-5-9V3"/><line x1="7" y1="3" x2="17" y2="3"/></svg>
+        </div>
+        <div class="levels">IGCSE · AS · A-level</div>
+        <h3>Chemistry</h3>
+        <p>Atomic structure, bonding, organic chemistry and physical chemistry. Clear worked examples and exam-board-specific past-paper practice.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+        </div>
+        <div class="levels">IGCSE · AS · A-level</div>
+        <h3>Maths & Physics</h3>
+        <p>Confidence-building support across IGCSE and A-level Maths and Physics, with structured exam technique and targeted revision.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 .9-4.5 4.4 1 6.7L12 17l-5.5 3 1-6.7L3 8.9 9 8z"/></svg>
+        </div>
+        <div class="levels">Admissions support</div>
+        <h3>UCAT & Medical school</h3>
+        <p>Personal statement feedback, interview practice and UCAT preparation, drawing on first-hand experience of the UK and NZ medical training pathway.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow-sm">About Meriel</span>
+        <h2 class="section-title">Two decades teaching at universities and hospitals in the UK and Aotearoa.</h2>
+        <p>
+          I'm a UK-trained medical doctor (BMBS, BMedSci) and lifelong educator. Over the past two
+          decades I've taught at the University of Cambridge, the University of Otago and the
+          University of Auckland, and I've worked clinically across hospital medicine and
+          pathology in the UK and New Zealand.
+        </p>
+        <p>
+          More recently I've been a Senior Professional Practice Fellow at the University of Otago,
+          tutoring medical students across pathology and clinical modules. I've also led the
+          development of digital learning content for academic and industry partners, including
+          long-running collaborations with the University of Auckland and the University of
+          Oxford.
+        </p>
+        <p>
+          I bring that experience to younger students with patience, structure and warmth.
+          My aim is to help every student feel less anxious about their exams and more confident
+          in the way they think.
+        </p>
+      </div>
+      <aside class="credentials" aria-label="Credentials">
+        <h3>Credentials</h3>
+        <ul>
+          <li><span class="label">BMBS</span><span class="value">University of Nottingham</span></li>
+          <li><span class="label">BMedSci</span><span class="value">University of Nottingham</span></li>
+          <li><span class="label">GMC registered</span><span class="value">United Kingdom</span></li>
+          <li><span class="label">Anatomy Demonstrator</span><span class="value">University of Cambridge</span></li>
+          <li><span class="label">Senior PPF / Tutor</span><span class="value">University of Otago</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <span class="eyebrow-sm">How lessons work</span>
+    <h2 class="section-title">A clear plan, gentle pace and exam-board-specific practice.</h2>
+    <p class="section-lede">
+      We start with a short conversation about where the student is, where they want to be, and what's getting in the way.
+      From there, every lesson has a plan, every term has a goal, and parents get a regular update.
+    </p>
+    <div class="approach">
+      <div class="step">
+        <span class="step-num">01</span>
+        <h3>Free intro call</h3>
+        <p>A 20-minute conversation with parents and student to understand the syllabus, current grades and target grades.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <h3>Tailored plan</h3>
+        <p>A simple study plan mapped to the exact specification (Cambridge, Edexcel, OCR or AQA), with milestones for each half-term.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <h3>Weekly tuition</h3>
+        <p>One-to-one lessons in person on the North Shore or Whangaparāoa Peninsula, or online from anywhere — whichever suits best.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="areas">
+  <div class="wrap">
+    <div class="areas-grid">
+      <div>
+        <span class="eyebrow-sm">Where I tutor</span>
+        <h2 class="section-title">In-person across the Whangaparāoa Peninsula and North Shore. Online anywhere.</h2>
+        <p>
+          I'm based in Gulf Harbour and travel for in-person lessons across the Whangaparāoa
+          Peninsula and the wider North Shore. Online lessons run on Zoom or Google Meet with
+          a shared whiteboard, and work just as well for IGCSE, A-level and UCAT preparation.
+        </p>
+        <div class="areas-list" aria-label="Suburbs served">
+          <span class="pill">Gulf Harbour</span>
+          <span class="pill">Stanmore Bay</span>
+          <span class="pill">Manly</span>
+          <span class="pill">Red Beach</span>
+          <span class="pill">Ōrewa</span>
+          <span class="pill">Silverdale</span>
+          <span class="pill">Albany</span>
+          <span class="pill">Browns Bay</span>
+          <span class="pill">Mairangi Bay</span>
+          <span class="pill">Takapuna</span>
+          <span class="pill">Online · NZ-wide</span>
+        </div>
+      </div>
+      <div class="map-card">
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps?q=Gulf+Harbour,+Auckland,+New+Zealand&z=11&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            title="Map of Whangaparāoa Peninsula and Auckland's North Shore"></iframe>
+        </div>
+        <div class="map-caption">
+          <span>Based in Gulf Harbour</span>
+          <a href="https://www.google.com/maps/dir//Gulf+Harbour,+Auckland,+New+Zealand" target="_blank" rel="noopener">Get directions ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow-sm">Get in touch</span>
+    <h2 class="section-title" style="color:#fff">Free 20-minute intro call. No obligation.</h2>
+    <p class="section-lede">
+      Send a quick email or text with the student's year group, school and the subject(s) you'd like
+      help with, and I'll be in touch within a day to arrange a time.
+    </p>
+    <div class="contact-actions">
+      <a class="btn btn-light" href="mailto:merielb@gmail.com?subject=Auckland%20Tutoring%20enquiry&body=Hi%20Meriel%2C%0A%0AI%27d%20like%20to%20enquire%20about%20tutoring%20for%3A%0A%0AStudent%20name%3A%0AYear%20group%3A%0ASchool%3A%0ASubject(s)%3A%0AAvailability%3A%0A%0AThanks%21">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        merielb@gmail.com
+      </a>
+      <a class="btn btn-outline-light" href="tel:+64210859 2898">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        021 085 92898
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="yr"></span> <strong>Auckland Tutoring</strong> · Dr Meriel Bladon · Gulf Harbour, Auckland · Whangaparāoa Peninsula and North Shore</p>
+    <p style="margin-top:6px;font-size:.78rem;opacity:.7;">aucklandtutoring.com</p>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
