@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="en-NZ">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Auckland Tutoring · Dr Meriel Bladon | IGCSE & A-level | North Shore & Whangaparāoa</title>
-<meta name="description" content="Auckland Tutoring — private one-to-one IGCSE and A-level tuition by Dr Meriel Bladon, a UK-trained medical doctor. Biology, Chemistry, Maths, Physics, plus UCAT and medical-school admissions support. North Shore Auckland and Whangaparāoa Peninsula.">
+<title>Auckland Tutoring · Dr Meriel Bladon | NCEA Level 1, 2 & 3 | North Shore & Whangaparāoa</title>
+<meta name="description" content="Auckland Tutoring. Private one-to-one NCEA Level 1, 2 and 3 tuition by Dr Meriel Bladon, a UK-trained medical doctor. Biology, Chemistry, Mathematics and Physics. North Shore Auckland and Whangaparāoa Peninsula.">
 <meta property="og:title" content="Auckland Tutoring · Dr Meriel Bladon">
-<meta property="og:description" content="Calm, structured IGCSE and A-level tutoring on Auckland's North Shore and Whangaparāoa Peninsula, by a UK-trained medical doctor.">
+<meta property="og:description" content="Patient, structured NCEA tutoring on Auckland's North Shore and Whangaparāoa Peninsula, by a UK-trained medical doctor.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #0f1d2e;
@@ -35,6 +35,9 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
+  body.lang-zh {
+    font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Inter", -apple-system, sans-serif;
+  }
   h1, h2, h3 {
     font-family: "Fraunces", "Iowan Old Style", "Palatino", Georgia, serif;
     font-weight: 600;
@@ -43,10 +46,19 @@
     letter-spacing: -0.01em;
     margin: 0 0 .4em;
   }
+  body.lang-zh h1, body.lang-zh h2, body.lang-zh h3 {
+    font-family: "Noto Serif SC", "PingFang SC", "Songti SC", "SimSun", serif;
+    letter-spacing: 0;
+  }
   p { margin: 0 0 1em; color: var(--ink); }
   a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
   a:hover { color: var(--accent-2); }
   .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* Bilingual visibility */
+  .t-zh { display: none; }
+  body.lang-zh .t-zh { display: revert; }
+  body.lang-zh .t-en { display: none; }
 
   /* Navigation */
   .nav {
@@ -58,7 +70,7 @@
   }
   .nav-inner {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 14px 24px; max-width: var(--max); margin: 0 auto;
+    padding: 14px 24px; max-width: var(--max); margin: 0 auto; gap: 16px;
   }
   .brand {
     display: inline-flex; align-items: baseline; gap: 10px;
@@ -72,13 +84,25 @@
     color: var(--ink-muted); font-weight: 400; font-style: italic; font-size: .82rem;
     border-left: 1px solid var(--line); padding-left: 10px;
   }
-  @media (max-width: 480px) {
-    .brand-by { display: none; }
-  }
+  body.lang-zh .brand-by { font-family: "Noto Sans SC", sans-serif; font-style: normal; }
+  @media (max-width: 560px) { .brand-by { display: none; } }
+
+  .nav-right { display: flex; align-items: center; gap: 18px; }
   .nav-links { display: flex; gap: 22px; }
-  .nav-links a { color: var(--ink-muted); text-decoration: none; font-size: .92rem; font-weight: 500; }
+  .nav-links a {
+    color: var(--ink-muted); text-decoration: none; font-size: .92rem; font-weight: 500;
+  }
   .nav-links a:hover { color: var(--accent); }
-  @media (max-width: 640px) { .nav-links { display: none; } }
+  body.lang-zh .nav-links a { font-family: "Noto Sans SC", sans-serif; }
+  @media (max-width: 720px) { .nav-links { display: none; } }
+
+  .lang-toggle {
+    background: transparent; border: 1px solid var(--line); color: var(--ink);
+    padding: 6px 12px; border-radius: 999px; font-size: .82rem; font-weight: 600;
+    cursor: pointer; font-family: inherit; line-height: 1;
+    transition: background .15s ease, border-color .15s ease;
+  }
+  .lang-toggle:hover { background: var(--paper-2); border-color: var(--ink-muted); }
 
   /* Hero */
   .hero {
@@ -95,14 +119,17 @@
     display: inline-block; font-size: .78rem; font-weight: 600; letter-spacing: .14em;
     text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
   }
+  body.lang-zh .eyebrow { letter-spacing: .08em; text-transform: none; }
   .hero h1 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); margin-bottom: 18px; }
   .hero h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
+  body.lang-zh .hero h1 em { font-style: normal; }
   .lede { font-size: 1.12rem; color: var(--ink-muted); max-width: 56ch; }
   .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
   .btn {
     display: inline-flex; align-items: center; gap: 10px;
     padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: .96rem;
     text-decoration: none; transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+    font-family: inherit;
   }
   .btn-primary { background: var(--accent); color: #fff; box-shadow: var(--shadow); }
   .btn-primary:hover { background: #173d61; color: #fff; transform: translateY(-1px); }
@@ -132,12 +159,13 @@
 
   /* Sections */
   section { padding: 80px 0; }
-  section:nth-of-type(even) { background: var(--paper-2); }
+  section:nth-of-type(even):not(.contact) { background: var(--paper-2); }
   .eyebrow-sm {
     display: block; font-size: .76rem; font-weight: 600; letter-spacing: .14em;
     text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
   }
-  .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); max-width: 22ch; margin-bottom: 14px; }
+  body.lang-zh .eyebrow-sm { letter-spacing: .08em; text-transform: none; }
+  .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); max-width: 26ch; margin-bottom: 14px; }
   .section-lede { color: var(--ink-muted); max-width: 64ch; font-size: 1.05rem; margin-bottom: 36px; }
 
   /* Subjects grid */
@@ -156,8 +184,9 @@
     display: grid; place-items: center; margin-bottom: 14px;
   }
   .card .icon svg { width: 20px; height: 20px; }
-  .card h3 { font-size: 1.18rem; font-family: "Fraunces", serif; margin-bottom: 6px; }
+  .card h3 { font-size: 1.18rem; margin-bottom: 6px; }
   .card .levels { color: var(--gold); font-weight: 600; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+  body.lang-zh .card .levels { letter-spacing: .04em; text-transform: none; }
   .card p { color: var(--ink-muted); font-size: .96rem; margin: 0; }
 
   /* About */
@@ -175,6 +204,39 @@
   .credentials .value { color: var(--ink-muted); font-size: .92rem; text-align: right; }
   @media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
 
+  /* Pathway */
+  .pathway-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 880px) { .pathway-grid { grid-template-columns: 1fr; } }
+  .path-card {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .path-card-emphasis {
+    background: linear-gradient(180deg, #fff, #f5f0e3);
+    border-color: #c9c0a6;
+  }
+  .path-year {
+    font-family: "Fraunces", serif; font-size: 1.5rem; color: var(--accent); font-weight: 600;
+    letter-spacing: -.01em;
+  }
+  body.lang-zh .path-year { font-family: "Noto Serif SC", serif; }
+  .path-level {
+    font-size: .76rem; font-weight: 600; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+  }
+  body.lang-zh .path-level { letter-spacing: .04em; text-transform: none; }
+  .path-card h3 { font-size: 1.1rem; margin: 4px 0 8px; }
+  .path-card p { font-size: .96rem; color: var(--ink-muted); margin: 0 0 14px; }
+  .path-subjects { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); padding-top: 14px; }
+  .path-subjects li {
+    padding: 6px 0; font-size: .92rem; color: var(--ink); position: relative; padding-left: 18px;
+  }
+  .path-subjects li::before {
+    content: ""; position: absolute; left: 0; top: 14px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: .65;
+  }
+  .path-subjects li strong { color: var(--ink); font-weight: 600; }
+
   /* Approach */
   .approach { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   @media (max-width: 880px) { .approach { grid-template-columns: 1fr; } }
@@ -183,6 +245,7 @@
     font-family: "Fraunces", serif; font-size: 1.6rem; color: var(--accent); font-weight: 600;
     display: block; margin-bottom: 6px;
   }
+  body.lang-zh .step-num { font-family: "Noto Serif SC", serif; }
 
   /* Areas */
   .areas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
@@ -200,9 +263,7 @@
     position: relative; width: 100%; aspect-ratio: 4 / 3;
     border-radius: 10px; overflow: hidden; background: var(--paper-2);
   }
-  .map-frame iframe {
-    position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
-  }
+  .map-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .map-caption {
     display: flex; justify-content: space-between; align-items: center;
     padding: 10px 6px 4px; font-size: .82rem; color: var(--ink-muted);
@@ -230,20 +291,30 @@
   footer p { margin: 0; }
 </style>
 </head>
-<body>
+<body class="lang-en">
 
 <nav class="nav">
   <div class="nav-inner">
     <a class="brand" href="#top">
       <span class="brand-mark">Auckland Tutoring</span>
-      <span class="brand-by">by Dr Meriel Bladon</span>
+      <span class="brand-by">
+        <span class="t-en">by Dr Meriel Bladon</span>
+        <span class="t-zh">Meriel Bladon 医生</span>
+      </span>
     </a>
-    <div class="nav-links">
-      <a href="#subjects">Subjects</a>
-      <a href="#about">About</a>
-      <a href="#approach">Approach</a>
-      <a href="#areas">Areas</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="#subjects"><span class="t-en">Subjects</span><span class="t-zh">科目</span></a>
+        <a href="#pathway"><span class="t-en">Med pathway</span><span class="t-zh">医学路径</span></a>
+        <a href="#about"><span class="t-en">About</span><span class="t-zh">关于</span></a>
+        <a href="#approach"><span class="t-en">Approach</span><span class="t-zh">教学方式</span></a>
+        <a href="#areas"><span class="t-en">Areas</span><span class="t-zh">服务范围</span></a>
+        <a href="#contact"><span class="t-en">Contact</span><span class="t-zh">联系</span></a>
+      </div>
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+        <span class="t-en">中文</span>
+        <span class="t-zh">EN</span>
+      </button>
     </div>
   </div>
 </nav>
@@ -251,26 +322,36 @@
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Auckland Tutoring · IGCSE & A-level · North Shore</span>
-      <h1>Calm, structured tutoring from a <em>UK-trained doctor</em>.</h1>
+      <span class="eyebrow">
+        <span class="t-en">Auckland Tutoring · NCEA Level 1, 2 & 3 · North Shore</span>
+        <span class="t-zh">奥克兰辅导 · NCEA 1、2、3级 · 北岸</span>
+      </span>
+      <h1>
+        <span class="t-en">Patient, structured tutoring from a <em>UK-trained doctor</em>.</span>
+        <span class="t-zh">由<em>英国培训医生</em>提供的耐心而有条理的辅导。</span>
+      </h1>
       <p class="lede">
-        Private one-to-one tuition in Biology, Chemistry, Maths and Physics for IGCSE and A-level students,
-        plus UCAT and medical-school admissions support. Based in Gulf Harbour and serving the
-        Whangaparāoa Peninsula and Auckland's North Shore.
+        <span class="t-en">Private one-to-one tuition in Biology, Chemistry, Mathematics and Physics for NCEA students in Years 11 to 13. Based in Gulf Harbour and serving the Whangaparāoa Peninsula and Auckland's North Shore.</span>
+        <span class="t-zh">为 NCEA 11 至 13 学年学生提供生物、化学、数学和物理的一对一私人辅导。本辅导设于 Gulf Harbour，覆盖 Whangaparāoa 半岛及奥克兰北岸地区。</span>
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#contact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Book a free intro call
+          <span class="t-en">Book a free intro call</span>
+          <span class="t-zh">预约免费初步咨询</span>
         </a>
-        <a class="btn btn-ghost" href="#subjects">See subjects</a>
+        <a class="btn btn-ghost" href="#subjects">
+          <span class="t-en">See subjects</span>
+          <span class="t-zh">查看科目</span>
+        </a>
       </div>
     </div>
     <div class="portrait-wrap">
       <img class="portrait" src="meriel.png" alt="Dr Meriel Bladon" />
       <div class="credit-caption">
         <strong>Dr Meriel Bladon</strong><br>
-        BMBS, BMedSci · University of Nottingham
+        <span class="t-en">BMBS, BMedSci · University of Nottingham</span>
+        <span class="t-zh">BMBS, BMedSci · 诺丁汉大学</span>
       </div>
     </div>
   </div>
@@ -278,12 +359,17 @@
 
 <section id="subjects">
   <div class="wrap">
-    <span class="eyebrow-sm">What I tutor</span>
-    <h2 class="section-title">IGCSE and A-level subjects, with optional admissions support.</h2>
+    <span class="eyebrow-sm">
+      <span class="t-en">What I tutor</span>
+      <span class="t-zh">辅导内容</span>
+    </span>
+    <h2 class="section-title">
+      <span class="t-en">NCEA sciences and mathematics.</span>
+      <span class="t-zh">NCEA 理科与数学辅导。</span>
+    </h2>
     <p class="section-lede">
-      Every student is different. Lessons are tailored to your specific exam board (Cambridge,
-      Edexcel, OCR, AQA) and pace, with a focus on building genuine understanding rather than
-      rote memorisation.
+      <span class="t-en">Lessons are tailored to the student's NCEA Level and to the specific Achievement Standards being taught at their school. The aim is genuine understanding of the material, with proper preparation for both internal and external assessments.</span>
+      <span class="t-zh">课程根据学生的 NCEA 级别及其学校所教的具体成就标准 (Achievement Standards) 量身定制。目标是让学生真正掌握学习内容，并为校内 (Internal) 和校外 (External) 评核做好充分准备。</span>
     </p>
     <div class="subjects">
 
@@ -291,36 +377,183 @@
         <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
         </div>
-        <div class="levels">IGCSE · AS · A-level</div>
-        <h3>Biology</h3>
-        <p>From cells, genetics and physiology through to ecology and biochemistry, taught by a doctor with years of clinical practice and biomedical teaching.</p>
+        <div class="levels">NCEA Level 1 · 2 · 3</div>
+        <h3>
+          <span class="t-en">Biology</span>
+          <span class="t-zh">生物</span>
+        </h3>
+        <p>
+          <span class="t-en">Cell biology, genetics, gene expression, animal behaviour, homeostasis, ecology, plant and animal responses, evolution and speciation, and human evolution. Taught by a doctor with experience of clinical practice and biomedical teaching at university level.</span>
+          <span class="t-zh">细胞生物学、遗传学、基因表达、动物行为、稳态 (homeostasis)、生态学、动植物反应、进化与物种形成，以及人类进化。由具有临床医学实践和大学医学生物教学经验的医生任教。</span>
+        </p>
       </div>
 
       <div class="card">
         <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6l-5 9a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 18l-5-9V3"/><line x1="7" y1="3" x2="17" y2="3"/></svg>
         </div>
-        <div class="levels">IGCSE · AS · A-level</div>
-        <h3>Chemistry</h3>
-        <p>Atomic structure, bonding, organic chemistry and physical chemistry. Clear worked examples and exam-board-specific past-paper practice.</p>
+        <div class="levels">NCEA Level 1 · 2 · 3</div>
+        <h3>
+          <span class="t-en">Chemistry</span>
+          <span class="t-zh">化学</span>
+        </h3>
+        <p>
+          <span class="t-en">Atomic structure, bonding and structure, energy changes, organic chemistry, oxidation and reduction (redox), chemical reactivity, thermochemistry, equilibrium and aqueous systems, and spectroscopy at Level 3.</span>
+          <span class="t-zh">原子结构、化学键与分子结构、能量变化、有机化学、氧化还原 (redox)、化学反应性、热化学、化学平衡与水溶液体系，3 级课程亦涵盖光谱学。</span>
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18M5 12h14M19 3v18"/></svg>
+        </div>
+        <div class="levels">NCEA Level 1 · 2 · 3</div>
+        <h3>
+          <span class="t-en">Mathematics</span>
+          <span class="t-zh">数学</span>
+        </h3>
+        <p>
+          <span class="t-en">Algebra, trigonometry, geometry and statistics across all three levels. At Level 3, the Calculus path covers differentiation, integration, complex numbers and the algebra needed for Physics and first-year university science.</span>
+          <span class="t-zh">三个级别均涵盖代数、三角学、几何与统计学。3 级课程的微积分路径涵盖微分、积分、复数，以及物理和大学一年级理科所需的代数知识。</span>
+        </p>
       </div>
 
       <div class="card">
         <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
         </div>
-        <div class="levels">IGCSE · AS · A-level</div>
-        <h3>Maths & Physics</h3>
-        <p>Confidence-building support across IGCSE and A-level Maths and Physics, with structured exam technique and targeted revision.</p>
+        <div class="levels">NCEA Level 1 · 2 · 3</div>
+        <h3>
+          <span class="t-en">Physics</span>
+          <span class="t-zh">物理</span>
+        </h3>
+        <p>
+          <span class="t-en">Mechanics, waves and electricity at all levels. At Level 2, atomic and nuclear physics and electromagnetism. At Level 3, mechanical systems, wave systems, electrical systems and modern physics.</span>
+          <span class="t-zh">各级别均涵盖力学、波与电学。2 级课程包括原子与核物理及电磁学。3 级课程涵盖力学系统、波动系统、电学系统及现代物理。</span>
+        </p>
       </div>
 
-      <div class="card">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 .9-4.5 4.4 1 6.7L12 17l-5.5 3 1-6.7L3 8.9 9 8z"/></svg>
-        </div>
-        <div class="levels">Admissions support</div>
-        <h3>UCAT & Medical school</h3>
-        <p>Personal statement feedback, interview practice and UCAT preparation, drawing on first-hand experience of the UK and NZ medical training pathway.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pathway">
+  <div class="wrap">
+    <span class="eyebrow-sm">
+      <span class="t-en">Path to medical school</span>
+      <span class="t-zh">通往医学院的路径</span>
+    </span>
+    <h2 class="section-title">
+      <span class="t-en">Recommended NCEA subjects for entry to Auckland or Otago.</span>
+      <span class="t-zh">进入奥克兰大学或奥塔哥大学医学预科推荐修读的 NCEA 科目。</span>
+    </h2>
+    <p class="section-lede">
+      <span class="t-en">Entry to medical school in New Zealand requires successful completion of a competitive first year of either Otago's Health Sciences First Year (HSFY) or Auckland's Bachelor of Health Sciences (BHSc) or Bachelor of Science (BSc). Both universities recommend specific Level 3 sciences as preparation. Students who arrive at university without that grounding generally find the first-year papers considerably more difficult.</span>
+      <span class="t-zh">在新西兰申请医学院须先完成奥塔哥大学的健康科学第一年 (HSFY) 或奥克兰大学的健康科学学士学位 (BHSc) 或理学学士学位 (BSc) 的第一年课程，竞争激烈。两所大学均建议学生在 NCEA 3 级修读特定的理科科目作为准备。若学生未掌握相关基础，第一年大学课程通常会显得相当困难。</span>
+    </p>
+
+    <div class="pathway-grid">
+
+      <div class="path-card">
+        <span class="path-year">
+          <span class="t-en">Year 11</span>
+          <span class="t-zh">11 学年</span>
+        </span>
+        <span class="path-level">NCEA Level 1</span>
+        <h3>
+          <span class="t-en">Foundation year</span>
+          <span class="t-zh">基础学年</span>
+        </h3>
+        <p>
+          <span class="t-en">The priority at Level 1 is preserving every Level 2 science option. Most schools offer the core Level 1 Science Achievement Standards covering biology, chemistry and physics; some split these into separate subjects. Mathematics and English are the other essential subjects to carry forward.</span>
+          <span class="t-zh">1 级阶段最重要的是为 2 级所有理科科目保留选择空间。多数学校开设涵盖生物、化学和物理的 1 级核心科学成就标准；部分学校将其分开教授。数学和英文是另外两门必修科目。</span>
+        </p>
+        <ul class="path-subjects">
+          <li>
+            <span class="t-en">Science, or Biology and Chemistry and Physics if offered separately</span>
+            <span class="t-zh">科学；如学校单独开设，则修读生物、化学和物理</span>
+          </li>
+          <li>
+            <span class="t-en">Mathematics</span>
+            <span class="t-zh">数学</span>
+          </li>
+          <li>
+            <span class="t-en">English</span>
+            <span class="t-zh">英文</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="path-card">
+        <span class="path-year">
+          <span class="t-en">Year 12</span>
+          <span class="t-zh">12 学年</span>
+        </span>
+        <span class="path-level">NCEA Level 2</span>
+        <h3>
+          <span class="t-en">All three sciences</span>
+          <span class="t-zh">三门理科全修</span>
+        </h3>
+        <p>
+          <span class="t-en">Level 2 is the gateway to Level 3. A student who does not take Chemistry, Biology and Physics at Level 2 cannot take them at Level 3, which closes off the corresponding science papers in first-year health sciences at Otago and Auckland. Key Level 2 topics include genetic variation, gene expression, animal behaviour, cellular processes, homeostasis, organic chemistry, redox, mechanics, waves, and atomic and nuclear physics.</span>
+          <span class="t-zh">2 级是通往 3 级的关键阶段。若学生未在 2 级修读化学、生物和物理，便无法在 3 级继续修读这些科目，相应地也无法在奥塔哥或奥克兰大学医学预科第一年修读对应的理科课程。2 级重点主题包括遗传变异、基因表达、动物行为、细胞过程、稳态 (homeostasis)、有机化学、氧化还原、力学、波动以及原子与核物理。</span>
+        </p>
+        <ul class="path-subjects">
+          <li>
+            <span class="t-en">Chemistry</span>
+            <span class="t-zh">化学</span>
+          </li>
+          <li>
+            <span class="t-en">Biology</span>
+            <span class="t-zh">生物</span>
+          </li>
+          <li>
+            <span class="t-en">Physics</span>
+            <span class="t-zh">物理</span>
+          </li>
+          <li>
+            <span class="t-en">Mathematics (with Statistics)</span>
+            <span class="t-zh">数学（含统计学）</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="path-card path-card-emphasis">
+        <span class="path-year">
+          <span class="t-en">Year 13</span>
+          <span class="t-zh">13 学年</span>
+        </span>
+        <span class="path-level">NCEA Level 3</span>
+        <h3>
+          <span class="t-en">Level 3 priorities for tertiary entry</span>
+          <span class="t-zh">3 级升学准备重点</span>
+        </h3>
+        <p>
+          <span class="t-en">Auckland's BHSc strongly recommends Biology, Chemistry and Physics, together with an English-rich subject. Otago's HSFY strongly recommends Chemistry, Physics and Mathematics with Calculus. Taking all three sciences along with Mathematics with Calculus satisfies both universities' recommendations.</span>
+          <span class="t-zh">奥克兰大学的健康科学学士学位 (BHSc) 强烈建议修读生物、化学和物理，并搭配一门重视英语的科目。奥塔哥大学的健康科学第一年 (HSFY) 则强烈建议修读化学、物理和微积分数学。同时修读三门理科加上微积分数学，可同时满足两所大学的建议。</span>
+        </p>
+        <ul class="path-subjects">
+          <li>
+            <span class="t-en"><strong>Biology.</strong> Plant and animal responses, animal homeostasis, evolution and speciation, human evolution, genetic transfer.</span>
+            <span class="t-zh"><strong>生物。</strong>动植物反应、动物体内稳态、进化与物种形成、人类进化、基因转移。</span>
+          </li>
+          <li>
+            <span class="t-en"><strong>Chemistry.</strong> Organic chemistry, equilibrium and aqueous systems, thermochemistry, spectroscopy.</span>
+            <span class="t-zh"><strong>化学。</strong>有机化学、化学平衡与水溶液体系、热化学、光谱学。</span>
+          </li>
+          <li>
+            <span class="t-en"><strong>Physics.</strong> Mechanical systems, wave systems, electrical systems, modern physics.</span>
+            <span class="t-zh"><strong>物理。</strong>力学系统、波动系统、电学系统、现代物理。</span>
+          </li>
+          <li>
+            <span class="t-en"><strong>Mathematics with Calculus.</strong> Differentiation, integration, complex numbers, algebra and trigonometry.</span>
+            <span class="t-zh"><strong>微积分数学。</strong>微分、积分、复数、代数与三角学。</span>
+          </li>
+          <li>
+            <span class="t-en">An English-rich subject for University Entrance literacy.</span>
+            <span class="t-zh">一门重视英语的科目，用于满足大学入学读写能力要求 (University Entrance literacy)。</span>
+          </li>
+        </ul>
       </div>
 
     </div>
@@ -331,35 +564,77 @@
   <div class="wrap">
     <div class="about-grid">
       <div>
-        <span class="eyebrow-sm">About Meriel</span>
-        <h2 class="section-title">Two decades teaching at universities and hospitals in the UK and Aotearoa.</h2>
+        <span class="eyebrow-sm">
+          <span class="t-en">About Meriel</span>
+          <span class="t-zh">关于 Meriel</span>
+        </span>
+        <h2 class="section-title">
+          <span class="t-en">Teaching at universities and hospitals in the UK and Aotearoa.</span>
+          <span class="t-zh">在英国与新西兰大学及医院的教学经验。</span>
+        </h2>
         <p>
-          I'm a UK-trained medical doctor (BMBS, BMedSci) and lifelong educator. Over the past two
-          decades I've taught at the University of Cambridge, the University of Otago and the
-          University of Auckland, and I've worked clinically across hospital medicine and
-          pathology in the UK and New Zealand.
+          <span class="t-en">I am a UK-trained medical doctor (BMBS, BMedSci). Over the past two decades I have taught at the University of Cambridge, the University of Otago and the University of Auckland, and worked clinically across hospital medicine and pathology in the United Kingdom and New Zealand.</span>
+          <span class="t-zh">本人为英国培训的医学医生 (BMBS, BMedSci)。过去二十年间，曾任教于剑桥大学、奥塔哥大学及奥克兰大学，并于英国和新西兰从事医院医学及病理学的临床工作。</span>
         </p>
         <p>
-          More recently I've been a Senior Professional Practice Fellow at the University of Otago,
-          tutoring medical students across pathology and clinical modules. I've also led the
-          development of digital learning content for academic and industry partners, including
-          long-running collaborations with the University of Auckland and the University of
-          Oxford.
+          <span class="t-en">More recently I have been a Senior Professional Practice Fellow at the University of Otago, tutoring medical students across pathology and clinical modules. I have also led the development of digital learning content for academic and industry partners, including long-running collaborations with the University of Auckland and the University of Oxford.</span>
+          <span class="t-zh">近年来在奥塔哥大学担任高级专业实践研究员 (Senior Professional Practice Fellow)，为医学生讲授病理学及临床模块。亦曾主导多家学术及产业机构的数字学习内容开发，包括与奥克兰大学和牛津大学的长期合作项目。</span>
         </p>
         <p>
-          I bring that experience to younger students with patience, structure and warmth.
-          My aim is to help every student feel less anxious about their exams and more confident
-          in the way they think.
+          <span class="t-en">With younger students I work patiently and methodically. The objective is for the student to understand the material properly, so that they sit examinations with less anxiety and clearer thinking.</span>
+          <span class="t-zh">面对年轻学生时，本人以耐心而有条理的方式教学。目标是让学生真正理解学习内容，从而以更平静的心态和更清晰的思路应对考试。</span>
         </p>
       </div>
       <aside class="credentials" aria-label="Credentials">
-        <h3>Credentials</h3>
+        <h3>
+          <span class="t-en">Credentials</span>
+          <span class="t-zh">资历</span>
+        </h3>
         <ul>
-          <li><span class="label">BMBS</span><span class="value">University of Nottingham</span></li>
-          <li><span class="label">BMedSci</span><span class="value">University of Nottingham</span></li>
-          <li><span class="label">GMC registered</span><span class="value">United Kingdom</span></li>
-          <li><span class="label">Anatomy Demonstrator</span><span class="value">University of Cambridge</span></li>
-          <li><span class="label">Senior PPF / Tutor</span><span class="value">University of Otago</span></li>
+          <li>
+            <span class="label">BMBS</span>
+            <span class="value">
+              <span class="t-en">University of Nottingham</span>
+              <span class="t-zh">诺丁汉大学</span>
+            </span>
+          </li>
+          <li>
+            <span class="label">BMedSci</span>
+            <span class="value">
+              <span class="t-en">University of Nottingham</span>
+              <span class="t-zh">诺丁汉大学</span>
+            </span>
+          </li>
+          <li>
+            <span class="label">
+              <span class="t-en">GMC registered</span>
+              <span class="t-zh">英国 GMC 注册</span>
+            </span>
+            <span class="value">
+              <span class="t-en">United Kingdom</span>
+              <span class="t-zh">英国</span>
+            </span>
+          </li>
+          <li>
+            <span class="label">
+              <span class="t-en">Anatomy Demonstrator</span>
+              <span class="t-zh">解剖学示范员</span>
+            </span>
+            <span class="value">
+              <span class="t-en">University of Cambridge</span>
+              <span class="t-zh">剑桥大学</span>
+            </span>
+          </li>
+          <li>
+            <span class="label">
+              <span class="t-en">Senior PPF / Tutor</span>
+              <span class="t-zh">高级研究员 / 导师</span>
+            </span>
+            <span class="value">
+              <span class="t-en">University of Otago</span>
+              <span class="t-zh">奥塔哥大学</span>
+            </span>
+          </li>
         </ul>
       </aside>
     </div>
@@ -368,27 +643,51 @@
 
 <section id="approach">
   <div class="wrap">
-    <span class="eyebrow-sm">How lessons work</span>
-    <h2 class="section-title">A clear plan, gentle pace and exam-board-specific practice.</h2>
+    <span class="eyebrow-sm">
+      <span class="t-en">How lessons work</span>
+      <span class="t-zh">课程方式</span>
+    </span>
+    <h2 class="section-title">
+      <span class="t-en">A clear plan, steady pace and NCEA-aligned practice.</span>
+      <span class="t-zh">清晰的计划、稳健的节奏，并紧扣 NCEA 要求的练习。</span>
+    </h2>
     <p class="section-lede">
-      We start with a short conversation about where the student is, where they want to be, and what's getting in the way.
-      From there, every lesson has a plan, every term has a goal, and parents get a regular update.
+      <span class="t-en">Tuition begins with a short conversation about where the student is, what they are aiming for, and where they are finding the work difficult. Each lesson has a written plan, each term has a defined goal, and parents receive a regular progress update.</span>
+      <span class="t-zh">课程从一段简短交谈开始，了解学生当前的程度、目标，以及在学习上遇到的困难。每节课均有书面计划，每学期设定明确目标，家长定期收到学习进度报告。</span>
     </p>
     <div class="approach">
       <div class="step">
         <span class="step-num">01</span>
-        <h3>Free intro call</h3>
-        <p>A 20-minute conversation with parents and student to understand the syllabus, current grades and target grades.</p>
+        <h3>
+          <span class="t-en">Free introductory call</span>
+          <span class="t-zh">免费初步咨询</span>
+        </h3>
+        <p>
+          <span class="t-en">A short conversation with parents and student to discuss the NCEA Level being taken, current grades and target grades.</span>
+          <span class="t-zh">与家长和学生进行简短交谈，了解学生当前修读的 NCEA 级别、目前成绩与目标成绩。</span>
+        </p>
       </div>
       <div class="step">
         <span class="step-num">02</span>
-        <h3>Tailored plan</h3>
-        <p>A simple study plan mapped to the exact specification (Cambridge, Edexcel, OCR or AQA), with milestones for each half-term.</p>
+        <h3>
+          <span class="t-en">Tailored plan</span>
+          <span class="t-zh">量身定制的学习计划</span>
+        </h3>
+        <p>
+          <span class="t-en">A study plan mapped to the specific NCEA Achievement Standards being taught at the student's school, with milestones for each term and structured preparation for both internal and external assessments.</span>
+          <span class="t-zh">根据学生学校所教的具体 NCEA 成就标准 (Achievement Standards) 制定学习计划，每学期设有学习里程碑，并为校内与校外评核做有系统的准备。</span>
+        </p>
       </div>
       <div class="step">
         <span class="step-num">03</span>
-        <h3>Weekly tuition</h3>
-        <p>One-to-one lessons in person on the North Shore or Whangaparāoa Peninsula, or online from anywhere — whichever suits best.</p>
+        <h3>
+          <span class="t-en">Weekly tuition</span>
+          <span class="t-zh">每周一对一课程</span>
+        </h3>
+        <p>
+          <span class="t-en">One-to-one lessons in person on the North Shore or Whangaparāoa Peninsula, or online if that is more convenient.</span>
+          <span class="t-zh">在北岸或 Whangaparāoa 半岛进行面对面教学；如更方便，亦可选择在线授课。</span>
+        </p>
       </div>
     </div>
   </div>
@@ -398,12 +697,17 @@
   <div class="wrap">
     <div class="areas-grid">
       <div>
-        <span class="eyebrow-sm">Where I tutor</span>
-        <h2 class="section-title">In-person across the Whangaparāoa Peninsula and North Shore. Online anywhere.</h2>
+        <span class="eyebrow-sm">
+          <span class="t-en">Where I tutor</span>
+          <span class="t-zh">服务范围</span>
+        </span>
+        <h2 class="section-title">
+          <span class="t-en">In person across the Whangaparāoa Peninsula and North Shore. Online anywhere.</span>
+          <span class="t-zh">面对面教学覆盖 Whangaparāoa 半岛与北岸；在线课程不受地理限制。</span>
+        </h2>
         <p>
-          I'm based in Gulf Harbour and travel for in-person lessons across the Whangaparāoa
-          Peninsula and the wider North Shore. Online lessons run on Zoom or Google Meet with
-          a shared whiteboard, and work just as well for IGCSE, A-level and UCAT preparation.
+          <span class="t-en">I am based in Gulf Harbour and travel for in-person lessons across the Whangaparāoa Peninsula and the wider North Shore. Online lessons run on Zoom or Google Meet with a shared whiteboard, and are equally suitable for NCEA preparation at every level.</span>
+          <span class="t-zh">本人居住于 Gulf Harbour，可前往 Whangaparāoa 半岛及更广泛的北岸地区进行面对面教学。在线课程通过 Zoom 或 Google Meet 配合共享白板进行，同样适合各级 NCEA 课程的辅导。</span>
         </p>
         <div class="areas-list" aria-label="Suburbs served">
           <span class="pill">Gulf Harbour</span>
@@ -416,7 +720,10 @@
           <span class="pill">Browns Bay</span>
           <span class="pill">Mairangi Bay</span>
           <span class="pill">Takapuna</span>
-          <span class="pill">Online · NZ-wide</span>
+          <span class="pill">
+            <span class="t-en">Online · NZ-wide</span>
+            <span class="t-zh">在线 · 新西兰全境</span>
+          </span>
         </div>
       </div>
       <div class="map-card">
@@ -429,8 +736,14 @@
             title="Map of Whangaparāoa Peninsula and Auckland's North Shore"></iframe>
         </div>
         <div class="map-caption">
-          <span>Based in Gulf Harbour</span>
-          <a href="https://www.google.com/maps/dir//Gulf+Harbour,+Auckland,+New+Zealand" target="_blank" rel="noopener">Get directions ↗</a>
+          <span>
+            <span class="t-en">Based in Gulf Harbour</span>
+            <span class="t-zh">本辅导设于 Gulf Harbour</span>
+          </span>
+          <a href="https://www.google.com/maps/dir//Gulf+Harbour,+Auckland,+New+Zealand" target="_blank" rel="noopener">
+            <span class="t-en">Get directions ↗</span>
+            <span class="t-zh">获取路线 ↗</span>
+          </a>
         </div>
       </div>
     </div>
@@ -439,11 +752,17 @@
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <span class="eyebrow-sm">Get in touch</span>
-    <h2 class="section-title" style="color:#fff">Free 20-minute intro call. No obligation.</h2>
+    <span class="eyebrow-sm">
+      <span class="t-en">Get in touch</span>
+      <span class="t-zh">联系方式</span>
+    </span>
+    <h2 class="section-title" style="color:#fff">
+      <span class="t-en">Free 20-minute introductory call.</span>
+      <span class="t-zh">免费 20 分钟初步咨询。</span>
+    </h2>
     <p class="section-lede">
-      Send a quick email or text with the student's year group, school and the subject(s) you'd like
-      help with, and I'll be in touch within a day to arrange a time.
+      <span class="t-en">Please send an email or text with the student's year group, school and the subjects they need help with. I will reply within a day to arrange a time.</span>
+      <span class="t-zh">请发送电子邮件或短信，告知学生的年级、就读学校以及需要辅导的科目。我将在一日内回复并安排时间。</span>
     </p>
     <div class="contact-actions">
       <a class="btn btn-light" href="mailto:merielb@gmail.com?subject=Auckland%20Tutoring%20enquiry&body=Hi%20Meriel%2C%0A%0AI%27d%20like%20to%20enquire%20about%20tutoring%20for%3A%0A%0AStudent%20name%3A%0AYear%20group%3A%0ASchool%3A%0ASubject(s)%3A%0AAvailability%3A%0A%0AThanks%21">
@@ -460,11 +779,55 @@
 
 <footer>
   <div class="wrap">
-    <p>© <span id="yr"></span> <strong>Auckland Tutoring</strong> · Dr Meriel Bladon · Gulf Harbour, Auckland · Whangaparāoa Peninsula and North Shore</p>
+    <p>
+      <span class="t-en">© <span id="yr"></span> <strong>Auckland Tutoring</strong> · Dr Meriel Bladon · Gulf Harbour, Auckland · Whangaparāoa Peninsula and North Shore</span>
+      <span class="t-zh">© <span id="yr2"></span> <strong>Auckland Tutoring</strong> · Meriel Bladon 医生 · Gulf Harbour，奥克兰 · Whangaparāoa 半岛与北岸</span>
+    </p>
     <p style="margin-top:6px;font-size:.78rem;opacity:.7;">aucklandtutoring.com</p>
   </div>
 </footer>
 
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script>
+  // Year stamps
+  var y = new Date().getFullYear();
+  var ye = document.getElementById('yr'); if (ye) ye.textContent = y;
+  var ye2 = document.getElementById('yr2'); if (ye2) ye2.textContent = y;
+
+  // Language toggle
+  (function () {
+    var body = document.body;
+    var toggle = document.getElementById('langToggle');
+    var html = document.documentElement;
+
+    function setLang(lang) {
+      if (lang === 'zh') {
+        body.classList.add('lang-zh');
+        body.classList.remove('lang-en');
+        html.setAttribute('lang', 'zh');
+      } else {
+        body.classList.add('lang-en');
+        body.classList.remove('lang-zh');
+        html.setAttribute('lang', 'en');
+      }
+      try { localStorage.setItem('siteLang', lang); } catch (e) { /* ignore */ }
+    }
+
+    var stored = null;
+    try { stored = localStorage.getItem('siteLang'); } catch (e) { /* ignore */ }
+    if (stored !== 'zh' && stored !== 'en') {
+      // First visit: detect browser preference for Chinese
+      var browser = (navigator.language || '').toLowerCase();
+      stored = browser.indexOf('zh') === 0 ? 'zh' : 'en';
+    }
+    setLang(stored);
+
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        setLang(body.classList.contains('lang-zh') ? 'en' : 'zh');
+      });
+    }
+  })();
+</script>
+
 </body>
 </html>
