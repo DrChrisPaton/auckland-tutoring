@@ -1,0 +1,13 @@
+{
+  "name": "Auckland Tutoring",
+  "short_name": "Auckland Tutoring",
+  "description": "Private NCEA tuition by Dr Meriel Bladon. Biology, Chemistry, Mathematics and Physics for Years 11–13 across Auckland's North Shore and Whangaparāoa Peninsula.",
+  "icons": [
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#1f4e79",
+  "background_color": "#fbfaf6",
+  "display": "browser",
+  "start_url": "/"
+}
