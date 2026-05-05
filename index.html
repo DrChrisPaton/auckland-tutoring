@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Auckland Tutoring · Dr Meriel Bladon | NCEA Level 1, 2 & 3 | North Shore & Whangaparāoa</title>
-<meta name="description" content="Auckland Tutoring. Private one-to-one NCEA Level 1, 2 and 3 tuition by Dr Meriel Bladon, a UK-trained medical doctor. Biology, Chemistry, Mathematics and Physics. North Shore Auckland and Whangaparāoa Peninsula.">
+<title>Auckland Tutoring · Dr Meriel Bladon | NCEA Biology | North Shore & Whangaparāoa</title>
+<meta name="description" content="Auckland Tutoring. Private one-to-one NCEA Biology tuition for Years 11 to 13 by Dr Meriel Bladon, a UK-trained medical doctor. In-person, library-based lessons across Auckland's North Shore and the Whangaparāoa Peninsula.">
 <meta property="og:title" content="Auckland Tutoring · Dr Meriel Bladon">
-<meta property="og:description" content="Patient, structured NCEA tutoring on Auckland's North Shore and Whangaparāoa Peninsula, by a UK-trained medical doctor.">
+<meta property="og:description" content="Patient, structured NCEA Biology tutoring on Auckland's North Shore and Whangaparāoa Peninsula, by a UK-trained medical doctor.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -175,11 +175,7 @@
   .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); max-width: 26ch; margin-bottom: 14px; }
   .section-lede { color: var(--ink-muted); max-width: 64ch; font-size: 1.05rem; margin-bottom: 36px; }
 
-  /* Subjects grid */
-  .subjects {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;
-  }
-  @media (max-width: 720px) { .subjects { grid-template-columns: 1fr; } }
+  /* Subjects */
   .card {
     background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
     padding: 26px 26px 24px; transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
@@ -188,13 +184,45 @@
   .card .icon {
     width: 38px; height: 38px; border-radius: 10px;
     background: rgba(31,78,121,.08); color: var(--accent);
-    display: grid; place-items: center; margin-bottom: 14px;
+    display: grid; place-items: center;
   }
   .card .icon svg { width: 20px; height: 20px; }
-  .card h3 { font-size: 1.18rem; margin-bottom: 6px; }
-  .card .levels { color: var(--gold); font-weight: 600; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+  .card h3 { font-size: 1.18rem; margin: 0 0 6px; }
+  .card .levels { color: var(--gold); font-weight: 600; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; }
   body.lang-zh .card .levels { letter-spacing: .04em; text-transform: none; }
   .card p { color: var(--ink-muted); font-size: .96rem; margin: 0; }
+
+  .card-feature { padding: 32px 36px 28px; }
+  .card-feature-header {
+    display: flex; gap: 18px; align-items: center; margin-bottom: 22px;
+    padding-bottom: 22px; border-bottom: 1px solid var(--line);
+  }
+  .card-feature-header .icon { flex: 0 0 auto; margin-bottom: 0; }
+  @media (max-width: 720px) {
+    .card-feature { padding: 24px 22px 22px; }
+    .card-feature-header { gap: 14px; margin-bottom: 18px; padding-bottom: 18px; }
+  }
+
+  .standards-list { list-style: none; padding: 0; margin: 0 0 22px; }
+  .standards-list li {
+    padding: 14px 0; border-bottom: 1px solid var(--line);
+  }
+  .standards-list li:last-child { border-bottom: 0; }
+  .standard-head {
+    display: flex; justify-content: space-between; gap: 16px; align-items: baseline;
+    flex-wrap: wrap; margin-bottom: 6px;
+  }
+  .standard-head strong { font-weight: 600; color: var(--ink); font-size: .98rem; }
+  .standard-meta {
+    color: var(--gold); font-size: .78rem; font-weight: 600;
+    letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
+  }
+  body.lang-zh .standard-meta { letter-spacing: .02em; text-transform: none; }
+  .standards-list p { font-size: .95rem; color: var(--ink-muted); margin: 0; }
+  .card-closer {
+    margin-top: 4px; font-size: .95rem; color: var(--ink-muted);
+    padding-top: 18px; border-top: 1px solid var(--line);
+  }
 
   /* About */
   .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
@@ -338,8 +366,8 @@
         <span class="t-zh">由<em>英国培训医生</em>提供的耐心而有条理的辅导。</span>
       </h1>
       <p class="lede">
-        <span class="t-en">Private one-to-one tuition in Biology, Chemistry, Mathematics and Physics for NCEA students in Years 11 to 13. Based in Gulf Harbour and serving the Whangaparāoa Peninsula and Auckland's North Shore.</span>
-        <span class="t-zh">为 NCEA 11 至 13 学年学生提供生物、化学、数学和物理的一对一私人辅导。本辅导设于 Gulf Harbour，覆盖 Whangaparāoa 半岛及奥克兰北岸地区。</span>
+        <span class="t-en">Private one-to-one tuition in Human Biology for NCEA students in Years 11 to 13. Based in Gulf Harbour and serving the Whangaparāoa Peninsula and Auckland's North Shore.</span>
+        <span class="t-zh">为 NCEA 11 至 13 学年学生提供人体生物学的一对一私人辅导。本辅导设于 Gulf Harbour，覆盖 Whangaparāoa 半岛及奥克兰北岸地区。</span>
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#contact">
@@ -371,75 +399,99 @@
       <span class="t-zh">辅导内容</span>
     </span>
     <h2 class="section-title">
-      <span class="t-en">NCEA sciences and mathematics.</span>
-      <span class="t-zh">NCEA 理科与数学辅导。</span>
+      <span class="t-en">NCEA Biology.</span>
+      <span class="t-zh">NCEA 生物学。</span>
     </h2>
     <p class="section-lede">
-      <span class="t-en">Lessons are tailored to the student's NCEA Level and to the specific Achievement Standards being taught at their school. The aim is genuine understanding of the material, with proper preparation for both internal and external assessments.</span>
-      <span class="t-zh">课程根据学生的 NCEA 级别及其学校所教的具体成就标准 (Achievement Standards) 量身定制。目标是让学生真正掌握学习内容，并为校内 (Internal) 和校外 (External) 评核做好充分准备。</span>
+      <span class="t-en">Lessons are tailored to the specific Achievement Standards being taught at the student's school. The aim is genuine understanding of the material, with proper preparation for both internal and external assessments.</span>
+      <span class="t-zh">课程根据学生学校所教的具体成就标准 (Achievement Standards) 量身定制。目标是让学生真正掌握学习内容，并为校内 (Internal) 和校外 (External) 评核做好充分准备。</span>
     </p>
-    <div class="subjects">
 
-      <div class="card">
+    <div class="card card-feature">
+      <div class="card-feature-header">
         <div class="icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
         </div>
-        <div class="levels">NCEA Level 1 · 2 · 3</div>
-        <h3>
-          <span class="t-en">Biology</span>
-          <span class="t-zh">生物</span>
-        </h3>
-        <p>
-          <span class="t-en">Cell biology, genetics, gene expression, animal behaviour, homeostasis, ecology, plant and animal responses, evolution and speciation, and human evolution. Taught by a doctor with experience of clinical practice and biomedical teaching at university level.</span>
-          <span class="t-zh">细胞生物学、遗传学、基因表达、动物行为、稳态 (homeostasis)、生态学、动植物反应、进化与物种形成，以及人类进化。由具有临床医学实践和大学医学生物教学经验的医生任教。</span>
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6l-5 9a3 3 0 0 0 2.6 4.5h10.8A3 3 0 0 0 20 18l-5-9V3"/><line x1="7" y1="3" x2="17" y2="3"/></svg>
+        <div>
+          <div class="levels">NCEA Level 3</div>
+          <h3>
+            <span class="t-en">Biology</span>
+            <span class="t-zh">生物学</span>
+          </h3>
         </div>
-        <div class="levels">NCEA Level 1 · 2 · 3</div>
-        <h3>
-          <span class="t-en">Chemistry</span>
-          <span class="t-zh">化学</span>
-        </h3>
-        <p>
-          <span class="t-en">Atomic structure, bonding and structure, energy changes, organic chemistry, oxidation and reduction (redox), chemical reactivity, thermochemistry, equilibrium and aqueous systems, and spectroscopy at Level 3.</span>
-          <span class="t-zh">原子结构、化学键与分子结构、能量变化、有机化学、氧化还原 (redox)、化学反应性、热化学、化学平衡与水溶液体系，3 级课程亦涵盖光谱学。</span>
-        </p>
       </div>
 
-      <div class="card">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18M5 12h14M19 3v18"/></svg>
-        </div>
-        <div class="levels">NCEA Level 1 · 2 · 3</div>
-        <h3>
-          <span class="t-en">Mathematics</span>
-          <span class="t-zh">数学</span>
-        </h3>
-        <p>
-          <span class="t-en">Algebra, trigonometry, geometry and statistics across all three levels. At Level 3, the Calculus path covers differentiation, integration, complex numbers and the algebra needed for Physics and first-year university science.</span>
-          <span class="t-zh">三个级别均涵盖代数、三角学、几何与统计学。3 级课程的微积分路径涵盖微分、积分、复数，以及物理和大学一年级理科所需的代数知识。</span>
-        </p>
-      </div>
+      <ul class="standards-list">
+        <li>
+          <div class="standard-head">
+            <strong>
+              <span class="t-en">AS91606 (3.6) · Human Evolution</span>
+              <span class="t-zh">AS91606 (3.6) · 人类进化</span>
+            </strong>
+            <span class="standard-meta">
+              <span class="t-en">External · 4 credits</span>
+              <span class="t-zh">校外 · 4 学分</span>
+            </span>
+          </div>
+          <p>
+            <span class="t-en">Trends in human biological and cultural evolution, including the development of bipedalism, tool use and cranial capacity.</span>
+            <span class="t-zh">人类生物学与文化进化的趋势，包括两足直立行走的发展、工具使用以及颅容量的变化。</span>
+          </p>
+        </li>
+        <li>
+          <div class="standard-head">
+            <strong>
+              <span class="t-en">AS91607 (3.7) · Human Manipulations of Genetic Transfer</span>
+              <span class="t-zh">AS91607 (3.7) · 基因转移的人为操控</span>
+            </strong>
+            <span class="standard-meta">
+              <span class="t-en">Internal · 3 credits</span>
+              <span class="t-zh">校内 · 3 学分</span>
+            </span>
+          </div>
+          <p>
+            <span class="t-en">Technologies such as IVF, cloning and transgenesis, and their biological implications.</span>
+            <span class="t-zh">体外受精 (IVF)、克隆、转基因等技术及其生物学意义。</span>
+          </p>
+        </li>
+        <li>
+          <div class="standard-head">
+            <strong>
+              <span class="t-en">AS91604 (3.4) · Homeostasis in Humans</span>
+              <span class="t-zh">AS91604 (3.4) · 人体稳态</span>
+            </strong>
+            <span class="standard-meta">
+              <span class="t-en">Internal · 3 credits</span>
+              <span class="t-zh">校内 · 3 学分</span>
+            </span>
+          </div>
+          <p>
+            <span class="t-en">How an animal (often a human) maintains a stable internal environment, for example blood glucose levels or body temperature.</span>
+            <span class="t-zh">动物（通常为人体）如何维持稳定的内环境，例如血糖水平或体温。</span>
+          </p>
+        </li>
+        <li>
+          <div class="standard-head">
+            <strong>
+              <span class="t-en">AS91602 (3.2) · Socio-scientific Issues</span>
+              <span class="t-zh">AS91602 (3.2) · 社会科学议题</span>
+            </strong>
+            <span class="standard-meta">
+              <span class="t-en">Internal · 3 credits</span>
+              <span class="t-zh">校内 · 3 学分</span>
+            </span>
+          </div>
+          <p>
+            <span class="t-en">Often used to explore human biology issues such as diabetes, diet or medicine.</span>
+            <span class="t-zh">常用于探讨人体生物学议题，例如糖尿病、饮食或医学。</span>
+          </p>
+        </li>
+      </ul>
 
-      <div class="card">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
-        </div>
-        <div class="levels">NCEA Level 1 · 2 · 3</div>
-        <h3>
-          <span class="t-en">Physics</span>
-          <span class="t-zh">物理</span>
-        </h3>
-        <p>
-          <span class="t-en">Mechanics, waves and electricity at all levels. At Level 2, atomic and nuclear physics and electromagnetism. At Level 3, mechanical systems, wave systems, electrical systems and modern physics.</span>
-          <span class="t-zh">各级别均涵盖力学、波与电学。2 级课程包括原子与核物理及电磁学。3 级课程涵盖力学系统、波动系统、电学系统及现代物理。</span>
-        </p>
-      </div>
-
+      <p class="card-closer">
+        <span class="t-en">Taught by a doctor with experience of clinical practice and biomedical teaching at university level.</span>
+        <span class="t-zh">由具有临床医学实践经验及大学医学生物教学经验的医生任教。</span>
+      </p>
     </div>
   </div>
 </section>
@@ -692,8 +744,8 @@
           <span class="t-zh">每周一对一课程</span>
         </h3>
         <p>
-          <span class="t-en">One-to-one lessons in person on the North Shore or Whangaparāoa Peninsula, or online if that is more convenient.</span>
-          <span class="t-zh">在北岸或 Whangaparāoa 半岛进行面对面教学；如更方便，亦可选择在线授课。</span>
+          <span class="t-en">One-to-one lessons in person on the North Shore or Whangaparāoa Peninsula, in booked library rooms.</span>
+          <span class="t-zh">在北岸或 Whangaparāoa 半岛进行面对面一对一教学，使用预约的图书馆房间。</span>
         </p>
       </div>
     </div>
@@ -709,12 +761,12 @@
           <span class="t-zh">服务范围</span>
         </span>
         <h2 class="section-title">
-          <span class="t-en">In person across the Whangaparāoa Peninsula and North Shore. Online anywhere.</span>
-          <span class="t-zh">面对面教学覆盖 Whangaparāoa 半岛与北岸；在线课程不受地理限制。</span>
+          <span class="t-en">In person across the Whangaparāoa Peninsula and North Shore.</span>
+          <span class="t-zh">面对面教学覆盖 Whangaparāoa 半岛与北岸。</span>
         </h2>
         <p>
-          <span class="t-en">I am based in Gulf Harbour and travel for in-person lessons across the Whangaparāoa Peninsula and the wider North Shore. Online lessons run on Zoom or Google Meet with a shared whiteboard, and are equally suitable for NCEA preparation at every level.</span>
-          <span class="t-zh">本人居住于 Gulf Harbour，可前往 Whangaparāoa 半岛及更广泛的北岸地区进行面对面教学。在线课程通过 Zoom 或 Google Meet 配合共享白板进行，同样适合各级 NCEA 课程的辅导。</span>
+          <span class="t-en">I am based in Gulf Harbour and travel for in-person lessons across the Whangaparāoa Peninsula and the wider North Shore, teaching in booked library rooms.</span>
+          <span class="t-zh">本人居住于 Gulf Harbour，可前往 Whangaparāoa 半岛及更广泛的北岸地区，使用预约的图书馆房间进行面对面教学。</span>
         </p>
         <div class="areas-list" aria-label="Suburbs served">
           <span class="pill">Gulf Harbour</span>
@@ -727,10 +779,6 @@
           <span class="pill">Browns Bay</span>
           <span class="pill">Mairangi Bay</span>
           <span class="pill">Takapuna</span>
-          <span class="pill">
-            <span class="t-en">Online · NZ-wide</span>
-            <span class="t-zh">在线 · 新西兰全境</span>
-          </span>
         </div>
       </div>
       <div class="map-card">
